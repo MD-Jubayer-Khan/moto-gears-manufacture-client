@@ -3,7 +3,7 @@ import img from '../../Assets/img/motorBike.webp';
 
 const Banner = () => {
     return (
-        <div class="hero min-h-screen text-white" style={{backgroundImage: `url(${img})`}}>
+        <div class="hero min-h-screen text-white bg-fixed" style={{backgroundImage: `url(${img})`}}>
         <div class="hero-content flex-col lg:flex-row-reverse">
             <div>
             <h1 class="text-5xl font-bold">Box Office News!</h1>

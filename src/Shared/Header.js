@@ -13,7 +13,7 @@ const Header = () => {
          <li><Link to="/about">My Portfolio</Link></li> </>
 
     return (
-        <div className="navbar bg-gradient-to-r from-secondary to-primary p-6 text-white sticky top-0">
+        <div className="navbar bg-gradient-to-r from-secondary to-primary p-6 text-white fixed z-50">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -29,9 +29,6 @@ const Header = () => {
           <ul className="menu menu-horizontal p-0 lg:ml-">
               {menuItm}
           </ul>
-        </div>
-        <div className="navbar-end">
-        <label for="my-drawer-2" class="btn btn-primary bg-gradient-to-r from-secondary to-primary drawer-button lg:hidden">Open drawer</label>
         </div>
       </div>
     );
