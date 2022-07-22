@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const ExtraPageTwo = () => {
@@ -44,14 +44,14 @@ const ExtraPageTwo = () => {
     return (
        <div className='flex flex-wrap items-center justify-center '>
             <div className='ml-10'>
-                <h1 class="text-5xl font-bold">Welcome To Moto Gears!</h1>
-                <p class="py-6">Here we provide any kind of parts/tools, gears or accessories for motorcycle</p>
-                <button class="btn bg-gradient-to-r from-secondary to-primary">Get Started</button>
+                <h1 className="text-5xl font-bold">Welcome To Moto Gears!</h1>
+                <p className="py-6">Here we provide any kind of parts/tools, gears or accessories for motorcycle</p>
+                <button className="btn bg-gradient-to-r from-secondary to-primary">Get Started</button>
                 </div>
-                <div class="mockup-phone border-primary my-10">
-                 <div class="camera"></div> 
-                    <div class="display">
-                     <div class="artboard artboard-demo phone-1">
+                <div className="mockup-phone border-primary my-10">
+                 <div className="camera"></div> 
+                    <div className="display">
+                     <div className="artboard artboard-demo phone-1">
                      <div className=' flex justify-center items-center'>
                      <div className="card w-96 bg-base-100 shadow-xl mt-28">
                         <div className="card-body">
@@ -76,8 +76,8 @@ const ExtraPageTwo = () => {
                                 type="email" placeholder="Enter your email" 
                                 className="input input-bordered w-full max-w-xs" />
                                 <label className="label">
-                                  {errors.email?.type === 'required' &&  <span class="label-text-alt text-red-500">{errors.email.message}</span>} 
-                                  {errors.email?.type === 'pattern' &&  <span class="label-text-alt text-red-500">{errors.email.message}</span>} 
+                                  {errors.email?.type === 'required' &&  <span className="label-text-alt text-red-500">{errors.email.message}</span>} 
+                                  {errors.email?.type === 'pattern' &&  <span className="label-text-alt text-red-500">{errors.email.message}</span>} 
 
                                 </label>
                               </div>
@@ -101,8 +101,8 @@ const ExtraPageTwo = () => {
                                 type="password" placeholder="Enter your password" 
                                 className="input input-bordered w-full max-w-xs" />
                                 <label className="label">
-                                  {errors.password?.type === 'required' &&  <span class="label-text-alt text-red-500">{errors.password.message}</       span>} 
-                                  {errors.password?.type === 'minLength' &&  <span class="label-text-alt text-red-500">{errors.password.message}</          span>} 
+                                  {errors.password?.type === 'required' &&  <span className="label-text-alt text-red-500">{errors.password.message}</       span>} 
+                                  {errors.password?.type === 'minLength' &&  <span className="label-text-alt text-red-500">{errors.password.message}</          span>} 
 
                                 </label>
                               </div>

@@ -25,7 +25,7 @@ const ExtraPageOne = () => {
               placeholder='Your message'
               rows={6}
             ></textarea>
-            <button class="btn bg-gradient-to-r from-secondary to-primary">Submit</button>
+            <button className="btn bg-gradient-to-r from-secondary to-primary">Submit</button>
           </div>
         </div>
     );
