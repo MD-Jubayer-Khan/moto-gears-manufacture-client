@@ -16,7 +16,7 @@ const Header = () => {
   const menuItm = <>
 
          <li><Link to="/">Home</Link></li>
-         <li><Link to="/appointment">Blogs</Link></li>
+         <li><Link to="/blogs">Blogs</Link></li>
          <li><Link to="/reviews">Reviews</Link></li>
          <li><Link to="/purchase">Purchase</Link></li>
          <li><Link to="/about">My Portfolio</Link></li> 
@@ -29,7 +29,7 @@ const Header = () => {
             {
               user && <div class="avatar">
               <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="https://placeimg.com/192/192/people" />
+                <img src="https://placeimg.com/192/192/people" alt='profile images' />
               </div>
             </div>
             }
