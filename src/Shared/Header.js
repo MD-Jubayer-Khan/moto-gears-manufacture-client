@@ -21,10 +21,18 @@ const Header = () => {
          <li><Link to="/purchase">Purchase</Link></li>
          <li><Link to="/about">My Portfolio</Link></li> 
 
-         {
+              {
                 user && <li><Link to="/dashboard">Dashboard</Link></li>
               }
+              
             <li>{user ? <button className='btn btn-ghost' onClick={logOut}>Sign Out</button> :<Link to="/login">Login</Link>}</li>
+            {
+              user && <div class="avatar">
+              <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <img src="https://placeimg.com/192/192/people" />
+              </div>
+            </div>
+            }
          </>
          
 

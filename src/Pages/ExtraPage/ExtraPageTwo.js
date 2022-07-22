@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const ExtraPageTwo = () => {
@@ -46,7 +46,7 @@ const ExtraPageTwo = () => {
             <div className='ml-10'>
                 <h1 className="text-5xl font-bold">Welcome To Moto Gears!</h1>
                 <p className="py-6">Here we provide any kind of parts/tools, gears or accessories for motorcycle</p>
-                <button className="btn bg-gradient-to-r from-secondary to-primary">Get Started</button>
+                <button className="btn bg-gradient-to-r from-secondary to-primary"><Link to="/login">Get Started</Link></button>
                 </div>
                 <div className="mockup-phone border-primary my-10">
                  <div className="camera"></div> 
@@ -107,14 +107,14 @@ const ExtraPageTwo = () => {
                                 </label>
                               </div>
                               {errorElement}
-                                 <input className='btn w-full max-w-xs' type="submit" value="Login"/>
+                                 <input className='btn w-full max-w-xs w-96' type="submit" value="Login"/>
                           
                               </form>
                           
                           <div className="divider">OR</div>
                           <button
                           onClick={()=> signInWithGoogle()}
-                           className="btn btn-outline btn-secondary"
+                           className="btn btn-outline btn-secondary w-96"
                            >Google sign In</button>
                         </div>
                       </div>
