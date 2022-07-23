@@ -1,9 +1,10 @@
 import React from 'react';
+import img from '../Assets/img/notFoundPage.webp'
 
 const NotFound = () => {
     return (
-        <div>
-            <h1>Oops page not found</h1>
+        <div className='mt-5'>
+            <img className=' w-screen' src={img} alt="" />
         </div>
     );
 };
