@@ -5,6 +5,7 @@ import { useSignInWithGoogle, useCreateUserWithEmailAndPassword, useUpdateProfil
 import { Link, useNavigate } from 'react-router-dom';
 // import useToken from '../../hooks/useToken';
 import auth from '../firebase.init';
+import useToken from '../hooks/useToken';
 
 const SignUp = () => {
     
@@ -19,13 +20,13 @@ const SignUp = () => {
       ] = useCreateUserWithEmailAndPassword(auth);
       const [updateProfile] = useUpdateProfile(auth)
 
-    //   const [token] = useToken(user || gUser)
+      const [token] = useToken(user || gUser)
 
     let errorElement;  
     
     const navigate = useNavigate();
     
-    if(gUser|| user){
+    if(token){
         navigate('/purchase')
     };
 
