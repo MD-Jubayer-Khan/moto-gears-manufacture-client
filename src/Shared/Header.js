@@ -3,14 +3,17 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../firebase.init';
+import img from '../Assets/img/notFound.jpg'
 
 const Header = () => {
   const [user] = useAuthState(auth);
 
 
+
   const logOut = () => {
     signOut(auth);
      localStorage.removeItem('accessToken')
+
   }
 
   const menuItm = <>
@@ -24,20 +27,37 @@ const Header = () => {
               {
                 user && <li><Link to="/dashboard">Dashboard</Link></li>
               }
+
+              {
+                !user && <li><Link to="/login">Login</Link></li>
+              }
               
-            <li>{user ? <button className='btn btn-ghost' onClick={logOut}>Sign Out</button> :<Link to="/login">Login</Link>}</li>
             {
-              user && <div class="avatar">
-              <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="https://placeimg.com/192/192/people" alt='profile images' />
-              </div>
+              user && <div class="dropdown dropdown-end text-primary">
+              <label tabIndex="0" class="btn btn-ghost btn-circle avatar">
+                <div class="w-10 rounded-full">
+                  <img src={user.photoURL ? user.photoURL : img } alt='profile pictures' />
+                </div>
+              </label>
+              <ul tabIndex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+              <label tabIndex="0" class="btn btn-ghost btn-circle avatar">
+                <div class="w-10 rounded-full ml-4">
+                  <img src={user.photoURL ? user.photoURL : img } alt='profile pictures' />
+                </div>
+              </label>
+                <li>
+                <h3 className='font-bold'>{user.displayName}</h3>
+                </li>
+                <li><h4>Update profile</h4></li>
+                <li>{user ? <button className='btn btn-ghost' onClick={logOut}>Sign Out</button> :<Link to="/login">Login</Link>}</li>
+              </ul>
             </div>
             }
          </>
          
 
     return (
-        <div className="navbar bg-gradient-to-r from-secondary to-primary p-6 text-white fixed top-0 z-50">
+        <div className="navbar bg-gradient-to-r from-secondary to-primary p-2 text-white fixed top-0 z-50">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">

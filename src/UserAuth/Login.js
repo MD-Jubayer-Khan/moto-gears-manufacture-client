@@ -34,10 +34,12 @@ const Login = () => {
     
     if(loading){
       return <p>Loading...</p>
+      
     }
     const onSubmit = data => {
         console.log(data);
         signInWithEmailAndPassword(data.email, data.password)
+        
     };
 
     return (
