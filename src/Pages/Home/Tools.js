@@ -15,7 +15,7 @@ const Tools = () => {
         fetch('http://localhost:5000/parts')
         .then(res => res.json())
         .then(data => setTools(data))
-    },[])
+    })
 
     return (
         <div className='my-28 mx-12'>
