@@ -1,10 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Purchase = () => {
+    const [parts, setParts] = useState([]);
+    const {img, name, text, price, qty, availableQty} = parts;
+    const {_id} = useParams();
+    const [user] = useAuthState(auth)
+
+   useEffect(()=>{
+       const url = `http://localhost:5000/parts/${_id}`
+       fetch(url)
+       .then(res => res.json())
+       .then(data => setParts(data));
+
+   });
+   
     return (
-        <div className='mt-28'>
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio architecto magni possimus obcaecati dicta quaerat. Odio necessitatibus rem obcaecati quos doloremque eius atque laborum quia aliquam ex! Dolores, consectetur. Delectus, vel numquam eius nemo, molestiae modi repellat dolor praesentium id impedit commodi aut ut atque reprehenderit. Quidem praesentium harum porro, explicabo obcaecati maxime voluptatem numquam nam iusto eius dolorum quae eaque. Laboriosam ad, fugiat minima eos laborum sint molestias fugit corrupti quia fuga, corporis quos maiores explicabo voluptas placeat iusto nulla? Voluptatibus odit sequi libero repellendus quisquam, sed, doloremque ab delectus quia veritatis voluptas soluta facilis dolorem harum consequatur nisi.</h2>
-        </div>
+        <div className="card lg:max-w-lg bg-base-100 shadow-xl mt-20 mx-auto">
+               <figure className="px-10 pt-10">
+                   <img src={img} alt="Shoes" className="rounded-xl lg:h-36 lg:w-80" />
+               </figure>
+               <div className="card-body items-center text-center">
+                   <h2 className="card-title">Product Name: {name}</h2>
+                   <p><span className=' font-bold text-2xl'>Descriptions: </span> <br />
+                   {text}</p>
+                   <p>Price: <span> $</span>{price}</p>
+                   <p>Min Purchase quantity:{qty}</p>
+                   <p>Available Quantity: {availableQty}</p>
+                   <input type="text" value={user.displayName} class="input input-bordered w-full max-w-xs" disabled />
+                   <input type="text" value={user.email} class="input input-bordered w-full max-w-xs" disabled />
+                   <input type="number" placeholder="Enter your number" class="input input-bordered w-full max-w-xs" />
+                   <input type="text" placeholder="Enter your address" class="input input-bordered w-full max-w-xs" />
+                   <button  className="btn bg-gradient-to-r from-secondary to-primary"><a >Order now</a></button>
+               </div>
+           </div>
     );
 };
 
