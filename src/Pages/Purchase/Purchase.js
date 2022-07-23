@@ -88,7 +88,7 @@ const Purchase = () => {
                    <input type="text" value={user.email} class="input input-bordered w-full max-w-xs" disabled />
                    <input type="number" placeholder="Enter your number" className="input input-bordered w-full max-w-xs" />
                    <input type="text" placeholder="Enter your address" className="input input-bordered w-full max-w-xs" />
-                   <button  className="btn bg-gradient-to-r from-secondary to-primary"><a >Order now</a></button>
+                   <button  className="btn bg-gradient-to-r from-secondary to-primary"><p >Order now</p></button>
                </div>
            </div>
     );
