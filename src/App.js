@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Blogs from './Pages/Blogs';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Purchase/Purchase';
 import Header from './Shared/Header';
@@ -25,6 +26,11 @@ function App() {
               <Purchase></Purchase>
             </RequireAuth>
           }></Route>
+          <Route path='/dashboard' element={
+            <RequireAuth>
+              <Dashboard></Dashboard>
+            </RequireAuth>
+             }></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
      </Routes>
     </div>
