@@ -2,10 +2,10 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useSignInWithGoogle, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
-// import useToken from '../../hooks/useToken';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 import useToken from '../hooks/useToken';
+
 
 const SignUp = () => {
     
@@ -24,10 +24,12 @@ const SignUp = () => {
 
     let errorElement;  
     
+    const location = useLocation();
     const navigate = useNavigate();
-    
-    if(token){
-        navigate('/purchase')
+    const from = location.state?.from?.pathname || '/'
+
+    if(user || gUser || token){
+      navigate(from, { replace: true})
     };
 
     if(error){

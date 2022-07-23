@@ -33,7 +33,7 @@ const Header = () => {
               
             {
               user && <div class="dropdown dropdown-end text-primary">
-              <label tabIndex="0" class="btn btn-ghost btn-circle avatar">
+              <label tabIndex="0" class="btn btn-secondary btn-circle avatar">
                 <div class="w-10 rounded-full">
                   <img src={user.photoURL ? user.photoURL : img } alt='profile pictures' />
                 </div>

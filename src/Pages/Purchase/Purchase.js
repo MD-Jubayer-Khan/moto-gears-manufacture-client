@@ -10,8 +10,7 @@ const Purchase = () => {
     const [user] = useAuthState(auth)
 
    useEffect(()=>{
-       const url = `http://localhost:5000/parts/${_id}`
-       fetch(url)
+       fetch( `http://localhost:5000/parts/${_id}`)
        .then(res => res.json())
        .then(data => setParts(data));
 

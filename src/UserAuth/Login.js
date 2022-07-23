@@ -26,8 +26,12 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/'
    
     
-    if(token){
-        navigate(from, { replace: true})
+    if(token ){
+        navigate(from, { replace: true} || '/')
+    };
+
+    if(user || gUser){
+      navigate(from, { replace: true})
     };
 
     if(error){
@@ -39,9 +43,7 @@ const Login = () => {
       
     }
     const onSubmit = data => {
-        console.log(data);
         signInWithEmailAndPassword(data.email, data.password)
-        
     };
 
     return (
