@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Order from './Order';
 
 const Purchase = () => {
     const [parts, setParts] = useState([]);
+    const [order, setOrder] = useState(null)
     const {img, name, text, price, qty, availableQty} = parts;
     const {_id} = useParams();
     const [user] = useAuthState(auth)
@@ -56,13 +58,36 @@ const Purchase = () => {
         .then(data => {
             console.log('success', data);
         })
-        }
-        
-     else{
-        alert("sorry we donn't have enough stock")
-        }
+
+     }      
     }
 
+
+    const handleSubmit = event =>{
+
+        const order = {
+          partsId : _id,
+          Parts : name,
+          user: user.email,
+          userName: user.displayName,
+
+
+        }
+
+        fetch('http://localhost:5000/order', {
+          method: 'post',
+          headers:{
+            'content-type' : 'application/json'
+          },
+          body: JSON.stringify(order)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+
+        })
+      
+    };
 
    
 
@@ -74,8 +99,10 @@ const Purchase = () => {
                </figure>
                <div className="card-body items-center text-center">
                    <h2 className="card-title">Product Name: {name}</h2>
-                   <p><span className=' font-bold text-2xl'>Descriptions: </span> <br />
-                   {text}</p>
+                   <p>
+                        <span className=' font-bold text-2xl'>Descriptions: </span> <br />
+                     {text}
+                   </p>
                    <p>Price: <span> $</span>{price}</p>
                    <p>Quantity: 
                     <button onClick={()=>handleDecrease(parts)} disabled={qty === 100} className='btn btn-xs btn-error'>Decrease </button> 
@@ -84,13 +111,21 @@ const Purchase = () => {
                    </p>
                    {qty === 100 && <p className='text-error'>Minimum purchase quantity is 100</p>}
                    {qty === availableQty && <p className='text-error'>You have reach our available stocks</p>}
-                   <p>Available Quantity: {availableQty}</p>
+                   <p>Available Quantity: {availableQty}</p>                     
                    <input type="text" value={user.displayName} class="input input-bordered w-full max-w-xs" disabled />
                    <input type="text" value={user.email} class="input input-bordered w-full max-w-xs" disabled />
-                   <input type="number" placeholder="Enter your number" className="input input-bordered w-full max-w-xs" />
-                   <input type="text" placeholder="Enter your address" className="input input-bordered w-full max-w-xs" />
-                   <button  className="btn bg-gradient-to-r from-secondary to-primary"><p >Order now</p></button>
+                   <input type="text" placeholder="Enter your address" name='address' className="input input-bordered w-full max-w-xs" />
+                   <input type="text" name='phone' placeholder="Enter your number" className="input input-bordered w-full max-w-xs"/>          
+                   <label 
+                   disabled={qty > availableQty}
+                   for="order-modal"  
+                   className="btn bg-gradient-to-r from-secondary to-primary"
+
+                   onClick={() => {  handleSubmit(); setOrder(parts);}}
+                   >Order now</label>
                </div>
+             
+               {order && <Order order={order}></Order>}
            </div>
     );
 };
