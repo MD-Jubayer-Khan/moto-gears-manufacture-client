@@ -17,8 +17,13 @@ const Dashboard = () => {
               <div class="flex-none hidden lg:block">
                 <ul class="menu menu-horizontal">
                   {/* <!-- Navbar menu content here --> */}
-                  <li><a>Navbar Item 1</a></li>
-                  <li><a>Navbar Item 2</a></li>
+                  <li><a>My Profile</a></li>
+                  <li><a>Add Review</a></li>
+                  <li><a>My Order</a></li>
+                  <li><a>Manage Order</a></li>
+                  <li><a> All Users</a></li>
+                  <li><a>Manage Products</a></li>
+                  <li><a>Add Product </a></li>
                 </ul>
               </div>
             </div>
@@ -29,9 +34,13 @@ const Dashboard = () => {
             <label for="my-drawer-3" class="drawer-overlay"></label> 
             <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
               {/* <!-- Sidebar content here --> */}
-              <li><a>Sidebar Item 1</a></li>
-              <li><a>Sidebar Item 2</a></li>
-
+                  <li><a>My Profile</a></li>
+                  <li><a>Add Review</a></li>
+                  <li><a>My Order</a></li>
+                  <li><a>Manage Order</a></li>
+                  <li><a> All Users</a></li>
+                  <li><a>Manage Products</a></li>
+                  <li><a>Add Product </a></li>
             </ul>         
           </div>
         </div>

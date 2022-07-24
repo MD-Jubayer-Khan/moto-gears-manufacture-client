@@ -7,7 +7,7 @@ const Tools = () => {
     // .then(res => res.json()))
 
     // if(isLoading){
-    //     return <p>Loading...</p>
+    //     return <p>Loading...</p> 
     // }
     const [tools, setTools] = useState([]);
 

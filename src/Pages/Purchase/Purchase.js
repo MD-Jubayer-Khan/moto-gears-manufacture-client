@@ -35,10 +35,6 @@ const Purchase = () => {
             console.log('success', data);
         })
      }
-
-     else{
-            alert('Minimum purchase quantity is 100')
-     }
  }
 
    
@@ -81,7 +77,13 @@ const Purchase = () => {
                    <p><span className=' font-bold text-2xl'>Descriptions: </span> <br />
                    {text}</p>
                    <p>Price: <span> $</span>{price}</p>
-                   <p>Quantity: <button onClick={()=>handleDecrease(parts)} className='btn btn-xs btn-error'>Decrease </button> {qty} <button onClick={()=> handleIncrease(parts)} className='btn btn-xs btn-success'> Increase</button></p>
+                   <p>Quantity: 
+                    <button onClick={()=>handleDecrease(parts)} disabled={qty === 100} className='btn btn-xs btn-error'>Decrease </button> 
+                    {qty} 
+                    <button onClick={()=> handleIncrease(parts)} disabled={qty >= availableQty} className='btn btn-xs btn-success'> Increase</button>
+                   </p>
+                   {qty === 100 && <p className='text-error'>Minimum purchase quantity is 100</p>}
+                   {qty === availableQty && <p className='text-error'>You have reach our available stocks</p>}
                    <p>Available Quantity: {availableQty}</p>
                    <input type="text" value={user.displayName} class="input input-bordered w-full max-w-xs" disabled />
                    <input type="text" value={user.email} class="input input-bordered w-full max-w-xs" disabled />
