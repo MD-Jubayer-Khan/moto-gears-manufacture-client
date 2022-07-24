@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
@@ -17,13 +17,13 @@ const Dashboard = () => {
               <div class="flex-none hidden lg:block">
                 <ul class="menu menu-horizontal">
                   {/* <!-- Navbar menu content here --> */}
-                  <li><a>My Profile</a></li>
-                  <li><a>Add Review</a></li>
-                  <li><a>My Order</a></li>
-                  <li><a>Manage Order</a></li>
-                  <li><a> All Users</a></li>
-                  <li><a>Manage Products</a></li>
-                  <li><a>Add Product </a></li>
+                    <li><Link to='/dashboard'>My Profile</Link></li>
+                    <li><Link to='/dashboard/addReview'>Add Review</Link></li>
+                    <li><Link to='/dashboard/myOrder'>My Order</Link></li>
+                    <li><Link to='/dashboard/manageOrder'>Manage Order</Link></li>
+                    <li><Link to='/dashboard/allUser'> All Users</Link></li>
+                    <li><Link to='/dashboard/manageProduct'>Manage Products</Link></li>
+                    <li><Link to='/dashboard/addProduct'>Add Product </Link></li>
                 </ul>
               </div>
             </div>
@@ -34,13 +34,13 @@ const Dashboard = () => {
             <label for="my-drawer-3" class="drawer-overlay"></label> 
             <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
               {/* <!-- Sidebar content here --> */}
-                  <li><a>My Profile</a></li>
-                  <li><a>Add Review</a></li>
-                  <li><a>My Order</a></li>
-                  <li><a>Manage Order</a></li>
-                  <li><a> All Users</a></li>
-                  <li><a>Manage Products</a></li>
-                  <li><a>Add Product </a></li>
+                 <li><Link to='/dashboard'>My Profile</Link></li>
+                  <li><Link to='/dashboard/addReview'>Add Review</Link></li>
+                  <li><Link to='/dashboard/myOrder'>My Order</Link></li>
+                  <li><Link to='/dashboard/manageOrder'>Manage Order</Link></li>
+                  <li><Link to='/dashboard/allUser'> All Users</Link></li>
+                  <li><Link to='/dashboard/manageProduct'>Manage Products</Link></li>
+                  <li><Link to='/dashboard/addProduct'>Add Product </Link></li>
             </ul>         
           </div>
         </div>

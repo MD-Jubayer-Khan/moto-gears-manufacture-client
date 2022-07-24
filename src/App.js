@@ -9,6 +9,13 @@ import NotFound from './Shared/NotFound';
 import Login from './UserAuth/Login';
 import RequireAuth from './UserAuth/RequireAuth';
 import SignUp from './UserAuth/SignUp';
+import MyProfile from './Pages/Dashboard/MyProfile'
+import AddProduct from './Pages/Dashboard/AddProduct';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
+import AllUser from './Pages/Dashboard/AllUser';
+import ManageOrder from './Pages/Dashboard/ManageOrder';
+import MyOrder from './Pages/Dashboard/MyOrder';
+import AddReview from './Pages/Dashboard/AddReview';
 
 function App() {
   return (
@@ -30,7 +37,15 @@ function App() {
             <RequireAuth>
               <Dashboard></Dashboard>
             </RequireAuth>
-             }></Route>
+             }>
+              <Route index element={<MyProfile></MyProfile>}></Route>
+              <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
+              <Route path='manageProduct' element={<ManageProducts></ManageProducts>}></Route>
+              <Route path='allUser' element={<AllUser></AllUser>}></Route>
+              <Route path='manageOrder' element={<ManageOrder></ManageOrder>}></Route>
+              <Route path='myOrder' element={<MyOrder></MyOrder>}></Route>
+              <Route path='addReview' element={<AddReview></AddReview>}></Route>
+             </Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
      </Routes>
     </div>
