@@ -42,8 +42,8 @@ const ExtraPageTwo = () => {
     };
     
     return (
-       <div className='flex flex-wrap items-center justify-center '>
-            <div className='ml-10'>
+       <div className='flex flex-wrap items-center justify-center'>
+            <div className='ml-10 '>
                 <h1 className="text-5xl font-bold">Welcome To Moto Gears!</h1>
                 <p className="py-6">Here we provide any kind of parts/tools, gears or accessories for motorcycle</p>
                 <button className="btn bg-gradient-to-r from-secondary to-primary"><Link to="/login">Get Started</Link></button>

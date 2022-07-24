@@ -2,7 +2,7 @@ import React from 'react';
 
 const ExtraPageOne = () => {
     return (
-        <div className='bg-gradient-to-r from-info to-success px-10 py-14 '>
+        <div className='bg-gradient-to-r from-info to-success px-10 py-14 mt-4' style={{clipPath: 'ellipse(65% 71% at 51% 71%)'}}>
           <div className='text-center pb-14 text-white'>
             <p className='text-xl font-bold text-transparent bg-clip-text bg-white'>
               Contact Us
