@@ -70,6 +70,7 @@ const Purchase = () => {
           Parts : name,
           user: user.email,
           userName: user.displayName,
+          qty: qty
 
 
         }

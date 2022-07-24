@@ -3,9 +3,9 @@ import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
-        <div class="drawer mt-32 px-12">
+        <div class="drawer mt-32 fixed">
           <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
-          <div class="drawer-content flex flex-col">
+          <div class="drawer-content flex flex-col px-12">
             {/* <!-- Navbar --> */}
             <div class="w-full navbar bg-base-300">
               <div class="flex-none lg:hidden">
@@ -32,7 +32,7 @@ const Dashboard = () => {
           </div> 
           <div class="drawer-side">
             <label for="my-drawer-3" class="drawer-overlay"></label> 
-            <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
+            <ul class="menu p-4 overflow-y-auto w-48 bg-base-100">
               {/* <!-- Sidebar content here --> */}
                  <li><Link to='/dashboard'>My Profile</Link></li>
                   <li><Link to='/dashboard/addReview'>Add Review</Link></li>
