@@ -8,4 +8,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;<h1>This is add product page</h1>
+export default AddProduct;

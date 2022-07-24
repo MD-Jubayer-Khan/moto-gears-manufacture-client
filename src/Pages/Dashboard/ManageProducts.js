@@ -8,4 +8,4 @@ const ManageProducts = () => {
     );
 };
 
-export default ManageProducts;<h1>This is manage products page</h1>
+export default ManageProducts;

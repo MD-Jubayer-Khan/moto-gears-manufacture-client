@@ -8,4 +8,4 @@ const ManageOrder = () => {
     );
 };
 
-export default ManageOrder;<h1>This is manage order page</h1>
+export default ManageOrder;
