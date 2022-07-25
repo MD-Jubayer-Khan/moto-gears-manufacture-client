@@ -4,6 +4,7 @@ import ExtraPageOne from '../ExtraPage/ExtraPageOne';
 import ExtraPageTwo from '../ExtraPage/ExtraPageTwo';
 import Banner from './Banner';
 import BusinessSummery from './BusinessSummery';
+import FetchReview from './FetchReview';
 import Tools from './Tools';
 
 
@@ -12,6 +13,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Tools></Tools>
+            <FetchReview></FetchReview>
             <BusinessSummery></BusinessSummery>
             <ExtraPageTwo></ExtraPageTwo>
             <ExtraPageOne></ExtraPageOne>
