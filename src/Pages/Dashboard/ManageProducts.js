@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ProductRow from './ProductRow';
 
 const ManageProducts = () => {
+    const [parts, setParts] = useState([])
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/parts')
+        .then(res => res.json())
+        .then(data => setParts(data))
+    }, [parts])
     return (
-        <div>
-            <h1>This is manage products page</h1>
+        <div className='mt-4'>
+        <div class="overflow-x-auto">
+            <table class="table w-full">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Product Name</th>
+                        <th>Product Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   {
+                       parts.map((singleParts, index)=><ProductRow
+                       key={singleParts._id}
+                       singleParts={singleParts}
+                       index={index}
+                       ></ProductRow>)
+                   }
+                </tbody>
+            </table>
         </div>
+    </div>
     );
 };
 
