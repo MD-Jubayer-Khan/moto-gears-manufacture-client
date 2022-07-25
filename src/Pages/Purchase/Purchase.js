@@ -11,6 +11,7 @@ const Purchase = () => {
     const {_id} = useParams();
     const [user] = useAuthState(auth)
 
+
    useEffect(()=>{
        fetch( `http://localhost:5000/parts/${_id}`)
        .then(res => res.json())

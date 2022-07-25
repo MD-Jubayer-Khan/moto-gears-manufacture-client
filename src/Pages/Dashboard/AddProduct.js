@@ -29,7 +29,7 @@ const AddProduct = () => {
                 <input className="input input-bordered w-full max-w-xs my-4" placeholder='Minimum Quantity should 100' type="number" {...register("qty", { required: true})}  />
                 <input className="input input-bordered w-full max-w-xs my-4" placeholder='Total Quantity' type="number" {...register("availableQty", { required: true })} />
                 <input className="input input-bordered w-full max-w-xs mb-4" placeholder='Photo URL' type="text" {...register("img",  { required: true })} />
-                <input type="submit" value="Add Service"  className="input input-bordered w-full max-w-xs btn bg-gradient-to-r from-secondary to-primary mb-8"/>
+                <input type="submit" value="Add Product"  className="input input-bordered w-full max-w-xs btn bg-gradient-to-r from-secondary to-primary mb-8"/>
             </form>
         </div>
     );

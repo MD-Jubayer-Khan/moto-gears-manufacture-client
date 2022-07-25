@@ -1,9 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
 
 const Tool = ({tool}) => {
     const {img, name, text, price, qty, availableQty, _id} = tool;
     const navigate = useNavigate();
+    const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user)
 
     const handlePurchase = _id =>{
         navigate(`/purchase/${_id}`)
@@ -21,7 +26,9 @@ const Tool = ({tool}) => {
             <p>Price: <span> $</span>{price}</p>
             <p>Min Purchase quantity:{qty}</p>
             <p>Available Quantity: {availableQty}</p>
-            <button onClick={()=> handlePurchase(_id)} className="btn bg-gradient-to-r from-secondary to-primary"><Link to="/purchase">Purchase</Link></button>
+            {
+                admin ? <button onClick={()=> window.alert('As an admin  You can not order any product')} className="btn bg-gradient-to-r from-secondary to-primary"> Purchase</button> : <button onClick={()=> handlePurchase(_id)} className="btn bg-gradient-to-r from-secondary to-primary"><Link to="/purchase">Purchase</Link></button>
+            }
         </div>
     </div>
     );
