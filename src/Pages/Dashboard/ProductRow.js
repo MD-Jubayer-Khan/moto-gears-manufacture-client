@@ -6,7 +6,7 @@ const ProductRow = ({singleParts, index}) => {
     const handleDelete = id =>{
         const confirm = window.confirm('Are you sure, you want to delete this product')
             if(confirm){
-            const url = `http://localhost:5000/parts/${id}`;
+            const url = `https://limitless-fjord-63635.herokuapp.com/parts/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

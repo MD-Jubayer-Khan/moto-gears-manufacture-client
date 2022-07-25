@@ -5,7 +5,7 @@ const ManageProducts = () => {
     const [parts, setParts] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/parts')
+        fetch('https://limitless-fjord-63635.herokuapp.com/parts')
         .then(res => res.json())
         .then(data => setParts(data))
     }, [parts])

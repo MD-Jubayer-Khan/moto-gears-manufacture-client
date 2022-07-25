@@ -13,7 +13,7 @@ const Purchase = () => {
 
 
    useEffect(()=>{
-       fetch( `http://localhost:5000/parts/${_id}`)
+       fetch( `https://limitless-fjord-63635.herokuapp.com/parts/${_id}`)
        .then(res => res.json())
        .then(data => setParts(data));
 
@@ -25,7 +25,7 @@ const Purchase = () => {
         const newQuantity = quantity - 1;
         if(newQuantity >= 100){
 
-        const url = `http://localhost:5000/decreaseQty/${_id}`;
+        const url = `https://limitless-fjord-63635.herokuapp.com/decreaseQty/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers:{
@@ -47,7 +47,7 @@ const Purchase = () => {
         const newQuantity = quantity + 1;
         
         if(newQuantity <= availableQuantity){
-        const url = `http://localhost:5000/increaseQty/${_id}`;
+        const url = `https://limitless-fjord-63635.herokuapp.com/increaseQty/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers:{
@@ -76,7 +76,7 @@ const Purchase = () => {
 
         }
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://limitless-fjord-63635.herokuapp.com/order', {
           method: 'post',
           headers:{
             'content-type' : 'application/json'

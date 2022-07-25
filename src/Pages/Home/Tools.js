@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Tool from './Tool';
 
 const Tools = () => {
-    // const { data: tools, isLoading } = useQuery('allTools', () => fetch('http://localhost:5000/parts')
+    // const { data: tools, isLoading } = useQuery('allTools', () => fetch('https://limitless-fjord-63635.herokuapp.com/parts')
     // .then(res => res.json()))
 
     // if(isLoading){
@@ -12,7 +12,7 @@ const Tools = () => {
     const [tools, setTools] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/parts')
+        fetch('https://limitless-fjord-63635.herokuapp.com/parts')
         .then(res => res.json())
         .then(data => setTools(data))
     })

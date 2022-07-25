@@ -4,7 +4,7 @@ import img from '../../Assets/img/motorBike.webp';
 
 const Banner = () => {
     return (
-        <div className="hero min-h-screen text-white bg-fixed bg-primary" style={{backgroundImage: `url(${img})`, clipPath: 'polygon(0 0, 100% 0%, 100% 84%, 0 100%)'}} >
+        <div className="hero min-h-screen text-white bg-fixed" style={{backgroundImage: `url(${img})`, clipPath: 'polygon(0 0, 100% 0%, 100% 84%, 0 100%)'}} >
         <div className="hero-content flex-col lg:flex-row-reverse">
             <div>
             <h1 className="text-5xl font-bold">Welcome To Moto Gears!</h1>

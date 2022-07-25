@@ -10,7 +10,7 @@ const AddReview = () => {
     
     const onSubmit = data => {
         console.log(data);
-        fetch('http://localhost:5000/review', {
+        fetch('https://limitless-fjord-63635.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

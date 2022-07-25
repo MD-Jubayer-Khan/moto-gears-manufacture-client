@@ -5,7 +5,7 @@ const AddProduct = () => {
     const { register, handleSubmit,  reset } = useForm(); 
     
     const onSubmit = data => {
-        fetch('http://localhost:5000/parts', {
+        fetch('https://limitless-fjord-63635.herokuapp.com/parts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
