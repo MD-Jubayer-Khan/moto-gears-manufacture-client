@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
-        <div class="drawer mt-32 fixed">
+        <div class="drawer mt-32">
           <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
           <div class="drawer-content flex flex-col px-12">
             {/* <!-- Navbar --> */}

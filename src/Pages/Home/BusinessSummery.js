@@ -3,6 +3,7 @@ import React from 'react';
 const BusinessSummery = () => {
     return (
       <div>
+        <h2 className='text-2xl font-bold'>Our Business Summery</h2>
            <div className="stats stats-vertical lg:stats-horizontal shadow bg-gradient-to-r from-secondary to-primary p-6 text-white my-4">
            <div className="stat">
              <div className="stat-title">Total Customer</div>
