@@ -36,7 +36,7 @@ const MyOrder= () => {
     const handleDelete = id =>{
         const confirm = window.confirm('Are you sure, you want to delete this product')
             if(confirm){
-            const url = `http://localhost:5000/order/${id}`;
+            const url = `https://limitless-fjord-63635.herokuapp.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
