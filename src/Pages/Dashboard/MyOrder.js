@@ -26,8 +26,7 @@ const MyOrder= () => {
                     return res.json()
                 })
                 .then(data => {
-                    console.log(data);
-
+                    
                     setOrders(data);
                 });
         }
