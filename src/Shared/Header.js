@@ -21,7 +21,7 @@ const Header = () => {
          <li><Link to="/">Home</Link></li>
          <li><Link to="/blogs">Blogs</Link></li>
          <li><Link to="/reviews">Reviews</Link></li>
-         <li><Link to="/about">My Portfolio</Link></li> 
+         <li><Link to="/myPortfolio">My Portfolio</Link></li> 
 
               {
                 user && <li><Link to="/dashboard">Dashboard</Link></li>

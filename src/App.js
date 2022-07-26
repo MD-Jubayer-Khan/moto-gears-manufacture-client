@@ -20,6 +20,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FetchReview from './Pages/Home/FetchReview';
 import Payment from './Pages/Dashboard/Payment';
+import MyPortfolio from './Pages/ExtraPage/MyPortfolio';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/myPortfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/reviews' element={<FetchReview></FetchReview>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signup' element={<SignUp></SignUp>}></Route>
