@@ -11,10 +11,10 @@ const CheckoutForm = ({payment }) => {
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
 
-    const { _id, price, patient, patientName } = payment;
+    const { _id, price, user, userName } = payment;
 
     useEffect(() => {
-        fetch('', {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -59,8 +59,8 @@ const CheckoutForm = ({payment }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        name: patientName,
-                        email: patient
+                        name: userName,
+                        email: user
                     },
                 },
             },
@@ -78,10 +78,10 @@ const CheckoutForm = ({payment }) => {
             
             //store payment on database
             const payment = {
-                appointment: _id,
+                parts: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://secret-dusk-46242.herokuapp.com/booking/${_id}`, {
+            fetch(`http://localhost:5000/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

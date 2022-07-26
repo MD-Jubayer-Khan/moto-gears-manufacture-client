@@ -6,7 +6,7 @@ import {loadStripe} from '@stripe/stripe-js'
 import CheckoutForm from './CheckoutForm';
 
 const stripePromise = loadStripe('pk_test_51LPiM4GjdXO4GakUrOzGWxKRqPTl5ipbmIPwdF8qWDEWH9vELv6dUaLboymSK0FzV89O9538WeJ88h7IcWKq7o9t00SdIJUN72');
-    // sk_test_51LPiM4GjdXO4GakUZyci0fopyPzjRz24EsM8dY8p5jCTNsJ6HJUhvkI0HmnjrYVG2k3Q5UftLKNO19YTRs7QL3XX00Ct4FRuxC
+
 const Payment = () => {
     const {_id} = useParams();
     const url = `http://localhost:5000/order/${_id}`
