@@ -19,6 +19,7 @@ import AddReview from './Pages/Dashboard/AddReview';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FetchReview from './Pages/Home/FetchReview';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
               <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
               <Route path='manageProduct' element={<ManageProducts></ManageProducts>}></Route>
               <Route path='allUser' element={<AllUser></AllUser>}></Route>
+              <Route path="payment/:_id" element={<Payment></Payment>}></Route>
               <Route path='manageOrder' element={<ManageOrder></ManageOrder>}></Route>
               <Route path='myOrder' element={<MyOrder></MyOrder>}></Route>
               <Route path='addReview' element={<AddReview></AddReview>}></Route>

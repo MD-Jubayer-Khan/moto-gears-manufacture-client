@@ -71,7 +71,7 @@ const MyOrder= () => {
                                  <td>{order.Parts}</td>
                                 <td>{order.qty}</td>
                                 <td> 
-                                    <button className='btn btn-xs btn-success m-2'><Link to='/'>Payment</Link></button>
+                                    <button className='btn btn-xs btn-success m-2'><Link to={`/dashboard/payment/${order._id}`}>Payment</Link></button>
                                     <button onClick={() => handleDelete (order._id)} className='btn btn-xs btn-error'> Cancel order</button>
                                     </td>
                             </tr>)
