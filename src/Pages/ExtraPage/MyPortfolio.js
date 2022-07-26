@@ -51,7 +51,7 @@ const MyPortfolio = () => {
                  </div>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <div class="card-actions justify-end">
-                  <div class="badge badge-outline"><a href='https://corporate-convention-center-jk.netlify.app/'  target="_blank" rel="noreferrer" >Live site</a></div> 
+                  <div class="badge badge-outline"><a href='https://warehouse-management-cli-9f2b9.web.app/'  target="_blank" rel="noreferrer" >Live site</a></div> 
                   <div class="badge badge-outline"><a href='https://github.com/MD-Jubayer-Khan?tab=repositories'  target="_blank" rel="noreferrer" >GitHub</a></div>
                 </div>
               </div>
@@ -70,7 +70,7 @@ const MyPortfolio = () => {
                  </div>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <div class="card-actions justify-end">
-                  <div class="badge badge-outline"><a href='https://program-managment-centre.web.app/'  target="_blank" rel="noreferrer" >Live site</a></div> 
+                  <div class="badge badge-outline"><a href='https://corporate-convention-center-jk.netlify.app/'  target="_blank" rel="noreferrer" >Live site</a></div> 
                   <div class="badge badge-outline"><a href='https://github.com/MD-Jubayer-Khan?tab=repositories'  target="_blank" rel="noreferrer" >GitHub</a></div>
                 </div>
               </div>
