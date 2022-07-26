@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 
@@ -31,7 +31,23 @@ const MyOrder= () => {
                     setOrders(data);
                 });
         }
-    }, [user])
+    }, [user, orders]);
+
+
+    const handleDelete = id =>{
+        const confirm = window.confirm('Are you sure, you want to delete this product')
+            if(confirm){
+            const url = `http://localhost:5000/order/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+        }
+    }
+
     return (
         <div className='mx-7 mt-8'>
             <div class="overflow-x-auto">
@@ -43,6 +59,7 @@ const MyOrder= () => {
                             <th>Email</th>
                             <th>Product Name</th>
                             <th>Quantity</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,6 +70,10 @@ const MyOrder= () => {
                                 <td>{order.user}</td>
                                  <td>{order.Parts}</td>
                                 <td>{order.qty}</td>
+                                <td> 
+                                    <button className='btn btn-xs btn-success m-2'><Link to='/'>Payment</Link></button>
+                                    <button onClick={() => handleDelete (order._id)} className='btn btn-xs btn-error'> Cancel order</button>
+                                    </td>
                             </tr>)
                         }
                         

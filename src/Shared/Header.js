@@ -47,7 +47,7 @@ const Header = () => {
                 <li>
                 <h3 className='font-bold'>{user.displayName}</h3>
                 </li>
-                <li><h4>Update profile</h4></li>
+                <li><Link to='/dashboard'>Update profile</Link></li>
                 <li>{user ? <button className='btn btn-ghost' onClick={logOut}>Sign Out</button> :<Link to="/login">Login</Link>}</li>
               </ul>
             </div>
