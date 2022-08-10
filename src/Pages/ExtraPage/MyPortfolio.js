@@ -16,6 +16,17 @@ const MyPortfolio = () => {
             <button className='btn btn-xs btn-info'>
                 <a href='https://www.linkedin.com/feed/'  target="_blank" rel="noreferrer" >LinkedIn Profile</a>
             </button>
+            <div className='mx-10'>
+              <h2 className='text-3xl font-bold mt-4 mb-4'>My Skills</h2>
+                    <div class="badge badge-warning ">HTML</div>
+                    <div class="badge badge-info ">CSS</div>
+                     <div class="badge badge-primary ">Bootstrap</div>
+                     <div class="badge badge-info ">TailWind css</div>
+                     <div class="badge badge-warning">Javascript</div> 
+                     <div class="badge badge-info">React</div>
+                      <div class="badge badge-success">Node.js</div>
+                      <div class="badge">MongoDB</div>
+            </div>
         </div>
         <div className='mt-24 mx-auto'>
             <h1 className='text-2xl font-bold mb-4'>Some of my Projects</h1>
