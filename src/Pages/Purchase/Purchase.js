@@ -89,6 +89,22 @@ const Purchase = () => {
           console.log(data);
 
         })
+
+        const newQuantity = (+availableQty) - (+qty)
+        
+
+        const url = `http://localhost:5000/reduceQty/${_id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({newQuantity})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log('success', data);
+        })
       
     };
 
