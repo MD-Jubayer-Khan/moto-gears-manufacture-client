@@ -19,6 +19,7 @@ const ManageProducts = () => {
                         <th>Product Name</th>
                         <th>Product Image</th>
                         <th>Action</th>
+                        <th>Restock Quantity</th>
                     </tr>
                 </thead>
                 <tbody>
