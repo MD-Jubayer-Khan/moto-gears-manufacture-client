@@ -93,7 +93,7 @@ const Purchase = () => {
         const newQuantity = (+availableQty) - (+qty)
         
 
-        const url = `http://localhost:5000/reduceQty/${_id}`;
+        const url = `https://limitless-fjord-63635.herokuapp.com/reduceQty/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers:{
