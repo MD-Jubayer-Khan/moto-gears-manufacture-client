@@ -25,3 +25,4 @@ Live site Link [Moto Gears](https://moto-gears-cf6ba.web.app/).
 * user can add review and order any product 
 * user can delete any unpaid order
 * added stripe payment method (only card payment)
+Admin credentials:(email: abc@def.com, password: 111111)
