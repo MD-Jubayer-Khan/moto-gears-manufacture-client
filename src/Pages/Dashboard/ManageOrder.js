@@ -5,7 +5,7 @@ const ManageOrder = () => {
     const [allOrder, setAllOrder] = useState([])
 
     useEffect(()=>{
-        fetch('https://limitless-fjord-63635.herokuapp.com/orders')
+        fetch('https://moto-gears-server.vercel.app/orders')
         .then(res => res.json())
         .then(data => {
             console.log(data);

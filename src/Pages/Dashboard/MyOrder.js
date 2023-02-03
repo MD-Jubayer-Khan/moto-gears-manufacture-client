@@ -11,7 +11,7 @@ const MyOrder= () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://limitless-fjord-63635.herokuapp.com/order?user=${user.email}`, {
+            fetch(`https://moto-gears-server.vercel.app/order?user=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const MyOrder= () => {
     const handleDelete = id =>{
         const confirm = window.confirm('Are you sure, you want to delete this product')
             if(confirm){
-            const url = `https://limitless-fjord-63635.herokuapp.com/order/${id}`;
+            const url = `https://moto-gears-server.vercel.app/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

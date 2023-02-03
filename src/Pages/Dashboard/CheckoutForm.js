@@ -14,7 +14,7 @@ const CheckoutForm = ({payment }) => {
     const { _id, price, user, userName } = payment;
 
     useEffect(() => {
-        fetch('https://limitless-fjord-63635.herokuapp.com/create-payment-intent', {
+        fetch('https://moto-gears-server.vercel.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -81,7 +81,7 @@ const CheckoutForm = ({payment }) => {
                 parts: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://limitless-fjord-63635.herokuapp.com/order/${_id}`, {
+            fetch(`https://moto-gears-server.vercel.app/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

@@ -2,7 +2,7 @@ import { useQuery } from 'react-query';
 import Tool from './Tool';
 
 const Tools = () => {
-    const { data, isLoading} = useQuery('allTools', () => fetch('https://limitless-fjord-63635.herokuapp.com/parts')
+    const { data, isLoading} = useQuery('allTools', () => fetch('https://moto-gears-server.vercel.app/parts')
     .then(res => res.json()))
 
     if(isLoading){

@@ -10,7 +10,7 @@ const AddReview = () => {
     
     const onSubmit = data => {
         console.log(data);
-        fetch('https://limitless-fjord-63635.herokuapp.com/review', {
+        fetch('https://moto-gears-server.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -13,7 +13,7 @@ const Purchase = () => {
 
 
    useEffect(()=>{
-       fetch( `https://limitless-fjord-63635.herokuapp.com/parts/${_id}`)
+       fetch( `https://moto-gears-server.vercel.app/parts/${_id}`)
        .then(res => res.json())
        .then(data => setParts(data));
 
@@ -25,7 +25,7 @@ const Purchase = () => {
         const newQuantity = quantity - 1;
         if(newQuantity >= 100){
 
-        const url = `https://limitless-fjord-63635.herokuapp.com/decreaseQty/${_id}`;
+        const url = `https://moto-gears-server.vercel.app/decreaseQty/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers:{
@@ -47,7 +47,7 @@ const Purchase = () => {
         const newQuantity = quantity + 1;
         
         if(newQuantity <= availableQuantity){
-        const url = `https://limitless-fjord-63635.herokuapp.com/increaseQty/${_id}`;
+        const url = `https://moto-gears-server.vercel.app/increaseQty/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers:{
@@ -77,7 +77,7 @@ const Purchase = () => {
 
         }
 
-        fetch('https://limitless-fjord-63635.herokuapp.com/order', {
+        fetch('https://moto-gears-server.vercel.app/order', {
           method: 'post',
           headers:{
             'content-type' : 'application/json'
@@ -93,7 +93,7 @@ const Purchase = () => {
         const newQuantity = (+availableQty) - (+qty)
         
 
-        const url = `https://limitless-fjord-63635.herokuapp.com/reduceQty/${_id}`;
+        const url = `https://moto-gears-server.vercel.app/reduceQty/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers:{

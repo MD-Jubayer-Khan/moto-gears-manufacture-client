@@ -12,7 +12,7 @@ const MyProfile = () => {
     const { register, handleSubmit,  reset } = useForm(); 
 
     useEffect(()=>{
-        const url = `https://limitless-fjord-63635.herokuapp.com/user/${user.email}`
+        const url = `https://moto-gears-server.vercel.app/user/${user.email}`
         fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -22,7 +22,7 @@ const MyProfile = () => {
     },[user.email, userInfo])
     
     const onSubmit = data => {
-        const url = `https://limitless-fjord-63635.herokuapp.com/userInfo/${user.email}`;
+        const url = `https://moto-gears-server.vercel.app/userInfo/${user.email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

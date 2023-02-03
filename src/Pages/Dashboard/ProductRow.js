@@ -6,7 +6,7 @@ const ProductRow = ({singleParts, index}) => {
     const handleDelete = id =>{
         const confirm = window.confirm('Are you sure, you want to delete this product')
             if(confirm){
-            const url = `https://limitless-fjord-63635.herokuapp.com/parts/${id}`;
+            const url = `https://moto-gears-server.vercel.app/parts/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -24,7 +24,7 @@ const ProductRow = ({singleParts, index}) => {
         const newQuantity = (+quantity) + (+availableQuantity);
         
 
-        const url = `https://limitless-fjord-63635.herokuapp.com/restockQty/${_id}`;
+        const url = `https://moto-gears-server.vercel.app/restockQty/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers:{

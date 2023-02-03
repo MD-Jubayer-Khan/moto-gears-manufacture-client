@@ -5,7 +5,7 @@ const AddProduct = () => {
     const { register, handleSubmit,  reset } = useForm(); 
     
     const onSubmit = data => {
-        fetch('https://limitless-fjord-63635.herokuapp.com/parts', {
+        fetch('https://moto-gears-server.vercel.app/parts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
